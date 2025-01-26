@@ -1,6 +1,14 @@
+import Header from './components/Header'
+import Table from './components/Table'
+import Forms from './components/Forms'
+
 function App() {
   return (
-    <h1>React Investment Calculator (TEST)</h1>
+    <main className='center'>
+      <Header />
+      <Forms />
+      <Table />
+    </main>
   )
 }
 
