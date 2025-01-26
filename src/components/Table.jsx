@@ -1,4 +1,4 @@
-export default function Table() {
+export default function Table({ result = [] }) {
   return (
     <table id="result">
       <thead>
@@ -11,13 +11,24 @@ export default function Table() {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>2025</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-        </tr>
+        {result &&
+          result.map((res) => (
+            <tr>
+              <td>{res.year}</td>
+              <td>{res.annualInvestment}</td>
+              <td>{res.interest}</td>
+              <td>{res.interest * res.annualInvestment}</td>
+              <td>{res.valueEndOfYear}</td>
+            </tr>
+          ))}
+
+        {result.length === 0 && (
+          <tr>
+            <td className="center" colSpan={5}>
+              No Investment Found
+            </td>
+          </tr>
+        )}
       </tbody>
     </table>
   );
