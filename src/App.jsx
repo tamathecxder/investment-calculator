@@ -18,9 +18,9 @@ function App() {
       const investmentObject = { ...previousInvestment };
 
       if (investmentObject.hasOwnProperty(key)) {
-        const result = calculateInvestmentResults(investmentObject);
-
         investmentObject[key] = Number(value) || 0;
+
+        const result = calculateInvestmentResults(investmentObject);
         investmentObject["result"] = result;
       }
 
