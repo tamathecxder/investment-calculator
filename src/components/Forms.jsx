@@ -14,6 +14,7 @@ export default function Forms({ onInputForms }) {
             type="number"
             name="initial_investment"
             onChange={(event) => handleCalculations(event, "initialInvestment")}
+            required
           />
         </div>
         <div>
@@ -22,6 +23,7 @@ export default function Forms({ onInputForms }) {
             type="number"
             name="annual_investment"
             onChange={(event) => handleCalculations(event, "annualInvestment")}
+            required
           />
         </div>
       </div>
@@ -33,6 +35,7 @@ export default function Forms({ onInputForms }) {
             type="number"
             name="expected_return"
             onChange={(event) => handleCalculations(event, "expectedReturn")}
+            required
           />
         </div>
         <div>
@@ -41,6 +44,7 @@ export default function Forms({ onInputForms }) {
             type="number"
             name="duration"
             onChange={(event) => handleCalculations(event, "duration")}
+            required
           />
         </div>
       </div>
