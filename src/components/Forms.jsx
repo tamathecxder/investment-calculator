@@ -1,10 +1,4 @@
 export default function Forms({ onInputForms }) {
-  function handleCalculations(event, key) {
-    const value = event.target.value;
-
-    onInputForms(key, value);
-  }
-
   return (
     <section id="user-input" className="user-input-container">
       <div className="input-group">
@@ -13,7 +7,9 @@ export default function Forms({ onInputForms }) {
           <input
             type="number"
             name="initial_investment"
-            onChange={(event) => handleCalculations(event, "initialInvestment")}
+            onChange={(event) =>
+              onInputForms("initialInvestment", event.target.value)
+            }
             required
           />
         </div>
@@ -22,7 +18,9 @@ export default function Forms({ onInputForms }) {
           <input
             type="number"
             name="annual_investment"
-            onChange={(event) => handleCalculations(event, "annualInvestment")}
+            onChange={(event) =>
+              onInputForms("annualInvestment", event.target.value)
+            }
             required
           />
         </div>
@@ -34,7 +32,9 @@ export default function Forms({ onInputForms }) {
           <input
             type="number"
             name="expected_return"
-            onChange={(event) => handleCalculations(event, "expectedReturn")}
+            onChange={(event) =>
+              onInputForms("expectedReturn", event.target.value)
+            }
             required
           />
         </div>
@@ -43,7 +43,7 @@ export default function Forms({ onInputForms }) {
           <input
             type="number"
             name="duration"
-            onChange={(event) => handleCalculations(event, "duration")}
+            onChange={(event) => onInputForms("duration", event.target.value)}
             required
           />
         </div>
